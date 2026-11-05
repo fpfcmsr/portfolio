@@ -37,10 +37,6 @@ summaryLength = 30
   ShowPostNavLinks = true
   ShowToc = false
 
-  # Copyright/license line hidden; only the theme's upstream credit remains.
-  [params.footer]
-    hideCopyright = true
-
 [[menu.main]]
   identifier = 'projects'
   name = 'Projects'

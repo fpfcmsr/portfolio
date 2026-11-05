@@ -94,9 +94,9 @@ so a custom domain or repo rename needs no config change.
 | Content: `content/`, images, site text | [CC BY 4.0](LICENSE-CONTENT) |
 | Theme (`themes/PaperMod` submodule) | MIT, see `themes/PaperMod/LICENSE` |
 
-Neither license is displayed on the site: the copyright line is hidden
-(`params.footer.hideCopyright`) and the license files sit at the repo root, outside
-`static/` and `content/`, so Hugo never publishes them.
+No license text is displayed on the site: the footer carries only the copyright
+(`© 2026 Francesco Fortunelli`) and the theme's upstream credit, and the license files
+sit at the repo root, outside `static/` and `content/`, so Hugo never publishes them.
 
 ## Notes
 
