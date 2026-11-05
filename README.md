@@ -3,10 +3,10 @@
 Hugo site (PaperMod theme) deployed to GitHub Pages as a **project site**:
 <https://fpfcmsr.github.io/portfolio/>
 
-Single-page personal site in the shape of <https://tylerhillery.com>: a blue bar with the
-name (small, links home) and a **Projects** tab on the left, GitHub and the theme toggle
-on the right. The body opens with LinkedIn, then About/Background prose beside a
-self-image slot, then a Projects list.
+Single-page personal site in the shape of <https://tylerhillery.com>: an ocean-blue bar
+with the name (small, links home) and a **Projects** tab on the left, GitHub and the theme
+toggle on the right. The body repeats the name at 2.5 rem in black, then LinkedIn, then
+About/Background prose beside a self-image slot, then a Projects list.
 
 ## Requirements
 
@@ -32,7 +32,7 @@ hugo server -D         # include drafts
 | `config/development/hugo.toml` | Dev-only `baseURL` so links stay on localhost |
 | `content/_index.md` | Home page body — About Me, Background |
 | `content/projects/` | One page per project; `example-project.md` is a draft template |
-| `layouts/home.html` | Home page: LinkedIn line, prose + photo slot, project list |
+| `layouts/home.html` | Home page: large name, LinkedIn line, prose + photo slot, project list |
 | `layouts/_partials/header.html` | Header override: brand + tab left, GitHub right |
 | `layouts/_partials/footer.html` | Footer override: copyright only, theme credit removed |
 | `assets/css/extended/custom.css` | Bar, brand colour, photo slot, project list styling |
@@ -116,9 +116,10 @@ No license text is displayed on the site: the footer carries only the copyright
 - **TOML table order**: in `config/_default/hugo.toml` every key after a `[params.x]`
   header belongs to that table. Keep scalar `params` first and `[params.links]` last, or
   flags like `ShowCodeCopyButtons` silently end up under `params.links` and stop applying.
-- **Bar details**: the bar is filled with `--bar-bg` (a deeper blue in dark mode), text is
-  `--bar-fg` / `--bar-fg-dim`; all three live in `custom.css`. The brand is 17 px (15 px
-  under 480 px); tabs and icons sit at 85% white and go full white on hover/active.
-  `--brand` still tints content links (`LinkedIn` hover). The home page keeps an `h1`
-  with the name as screen-reader-only text, since the visible name is the bar's brand
-  link.
+- **Bar and name colours**: the bar is filled with `--bar-bg` — ocean blue
+  `rgb(15, 76, 105)` in light mode, `rgb(13, 63, 87)` in dark — with text at
+  `--bar-fg` / `--bar-fg-dim`; all in `custom.css`. The brand is 17 px (15 px under
+  480 px); tabs and icons sit at 85% white and go full white on hover/active.
+- **Hero name**: `.home-name` is 2.5 rem (2 rem under 640 px), black via `--hero-name`
+  in light mode — dark mode switches it to near-white `rgb(232, 237, 240)` since black
+  would disappear on the dark background.

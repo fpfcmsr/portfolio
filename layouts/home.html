@@ -1,6 +1,6 @@
 {{- define "main" }}
 <article class="home">
-    <h1 class="sr-only">{{ .Title | default site.Title }}</h1>
+    <h1 class="home-name">{{ .Title | default site.Title }}</h1>
 
     {{- with site.Params.links.linkedin }}
     <a class="home-link" href="{{ . }}" target="_blank" rel="noopener me">

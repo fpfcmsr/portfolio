@@ -1,21 +1,24 @@
-/* Blue bar; accent blue kept for content hover states. */
+/* Ocean bar; accent blue kept for content hover states. */
 :root {
-    --bar-bg: rgb(31, 95, 208);
+    --bar-bg: rgb(15, 76, 105);
     --bar-fg: rgb(255, 255, 255);
     --bar-fg-dim: rgba(255, 255, 255, 0.85);
-    --brand: rgb(31, 95, 208);
+    --brand: rgb(15, 76, 105);
+    --hero-name: rgb(0, 0, 0);
 }
 
 :root[data-theme="dark"] {
-    --bar-bg: rgb(28, 74, 170);
-    --brand: rgb(138, 180, 248);
+    --bar-bg: rgb(13, 63, 87);
+    --brand: rgb(127, 179, 200);
+    --hero-name: rgb(232, 237, 240);
 }
 
 /* No-JS fallback for auto theme. */
 @media (prefers-color-scheme: dark) {
     :root[data-theme="auto"] {
-        --bar-bg: rgb(28, 74, 170);
-        --brand: rgb(138, 180, 248);
+        --bar-bg: rgb(13, 63, 87);
+        --brand: rgb(127, 179, 200);
+        --hero-name: rgb(232, 237, 240);
     }
 }
 
@@ -91,7 +94,16 @@
     color: var(--bar-fg-dim);
 }
 
-/* Home: LinkedIn line, then prose with the self-image slot beside it. */
+/* Home: large name, LinkedIn beneath it, then prose with the photo slot. */
+.home-name {
+    margin: 0 0 0.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--hero-name);
+}
+
 .home-link {
     display: inline-flex;
     align-items: center;
@@ -164,19 +176,6 @@
     font-size: 0.92rem;
 }
 
-/* Home h1 is provided for structure; the name is rendered in the header. */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
 @media (max-width: 480px) {
     .header-nav {
         padding-left: 16px;
@@ -202,6 +201,10 @@
 }
 
 @media (max-width: 640px) {
+    .home-name {
+        font-size: 2rem;
+    }
+
     .home-body {
         flex-direction: column;
         gap: 1.25rem;
