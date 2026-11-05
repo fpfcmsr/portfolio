@@ -20,8 +20,7 @@ git clone --recurse-submodules https://github.com/fpfcmsr/portfolio.git
 # already cloned without submodules?
 git submodule update --init --recursive
 
-hugo server            # http://localhost:1313/portfolio/
-hugo server -D         # include drafts
+hugo server            # http://localhost:1313/portfolio/ — drafts included
 ```
 
 ## Layout
@@ -64,7 +63,6 @@ Projects are page bundles, so each one keeps its images next to its text:
 
 ```sh
 hugo new content projects/my-project/index.md   # creates the bundle, as a draft
-hugo server -D                                  # view drafts while filling them in
 ```
 
 The file lands with `archetypes/projects.md` front matter and body:
@@ -94,9 +92,10 @@ Body sections are `Overview`, `Problem`, `Approach`, `Stack`, `Results`, `Links`
 hugo --gc --minify
 ```
 
-Output lands in `public/` (git-ignored — CI builds it). If you have been running
-`hugo server -D`, draft output stays in `public/`; add `--cleanDestinationDir` when
-building locally so published output matches CI.
+Output lands in `public/` (git-ignored — CI builds it). `config/development/hugo.toml`
+sets `buildDrafts = true`, so `hugo server` shows drafts; production builds and CI do not.
+If you built once with drafts, add `--cleanDestinationDir` so stale draft output does not
+linger in `public/`.
 
 ## Deploy
 

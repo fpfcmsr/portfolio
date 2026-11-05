@@ -1,3 +1,8 @@
 # Used by 'hugo server' (HUGO_ENVIRONMENT=development).
 # Keeps menu/absolute links on localhost instead of the production host.
 baseURL = 'http://localhost:1313/portfolio/'
+
+# Show draft projects while working locally, so new entries from
+# `hugo new content projects/<name>/index.md` are visible immediately.
+# Production builds (`hugo`, CI) ignore this file and still exclude drafts.
+buildDrafts = true
