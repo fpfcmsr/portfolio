@@ -1,12 +1,26 @@
-{{- /* Site override: top-right GitHub only, no nav menu.
-  Home carries the name as its h1, so the header logo is omitted there. */ -}}
+{{- /* Site override: brand + tab on the left, GitHub only on the right.
+  Mimics the reference site's bar structure (brand, tabs, icons), not its grey fill. */ -}}
 <header class="header">
     <nav class="header-nav">
-        {{- if not .IsHome }}
-        <div class="logo">
-            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ site.Title }} (Alt + H)">{{ site.Title }}</a>
+        <div class="header-left">
+            <div class="logo">
+                <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ site.Title }} (Alt + H)">{{ site.Title }}</a>
+            </div>
+            {{- with site.Menus.main }}
+            {{- $pageURL := $.Permalink }}
+            <ul id="menu" class="menu">
+                {{- range . }}
+                {{- $itemURL := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL)) | absLangURL }}
+                <li>
+                    <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }}"
+                        {{- if strings.HasPrefix $pageURL $itemURL }} class="active"{{ end }}>
+                        <span>{{ .Name }}</span>
+                    </a>
+                </li>
+                {{- end }}
+            </ul>
+            {{- end }}
         </div>
-        {{- end }}
         <div class="logo-switches">
             {{- with site.Params.links.github }}
             <a class="header-social" href="{{ . }}" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub">

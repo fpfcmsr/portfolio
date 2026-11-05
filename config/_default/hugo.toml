@@ -41,6 +41,12 @@ summaryLength = 30
   [params.footer]
     hideCopyright = true
 
+[[menu.main]]
+  identifier = 'projects'
+  name = 'Projects'
+  url = '/projects/'
+  weight = 10
+
 [markup]
   [markup.goldmark.renderer]
     unsafe = false

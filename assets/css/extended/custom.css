@@ -1,30 +1,91 @@
-/* Home hero: name + LinkedIn on the left, self image slot on the right. */
-.home-hero {
-    display: flex;
-    gap: 2.5rem;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 2rem;
+/* Blue brand: light and dark variants. */
+:root {
+    --brand: rgb(31, 95, 208);
+    --brand-hover: rgb(20, 72, 165);
 }
 
-.home-hero-text {
-    flex: 1 1 auto;
+:root[data-theme="dark"] {
+    --brand: rgb(138, 180, 248);
+    --brand-hover: rgb(174, 203, 250);
+}
+
+/* No-JS fallback for auto theme. */
+@media (prefers-color-scheme: dark) {
+    :root[data-theme="auto"] {
+        --brand: rgb(138, 180, 248);
+        --brand-hover: rgb(174, 203, 250);
+    }
+}
+
+/* Header: brand and tab on the left, GitHub on the right. */
+.header-nav {
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
     min-width: 0;
 }
 
-.home-title {
-    margin: 0 0 0.5rem;
-    font-size: 2.4rem;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+.header-nav .logo a {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--brand);
 }
 
+.header-nav .logo a:hover {
+    color: var(--brand-hover);
+}
+
+.header-nav .menu {
+    column-gap: 1.25rem;
+}
+
+.header-nav .menu a {
+    font-size: 14px;
+    color: var(--secondary);
+}
+
+.header-nav .menu a:hover,
+.header-nav .menu .active {
+    color: var(--brand);
+}
+
+.header-nav .menu .active {
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.35rem;
+}
+
+.header-nav>.logo-switches {
+    margin-left: auto;
+}
+
+.header-social {
+    display: inline-flex;
+    align-items: center;
+    color: var(--secondary);
+}
+
+.header-social svg {
+    width: 20px;
+    height: 20px;
+}
+
+.header-social:hover {
+    color: var(--brand);
+}
+
+/* Home: LinkedIn line, then prose with the self-image slot beside it. */
 .home-link {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     color: var(--secondary);
     font-size: 0.95rem;
+    margin-bottom: 1.25rem;
 }
 
 .home-link svg {
@@ -33,20 +94,32 @@
 }
 
 .home-link:hover {
-    color: var(--primary);
+    color: var(--brand);
+}
+
+.home-body {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.home-content {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-bottom: 2.5rem;
+}
+
+.home-content>h2:first-child {
+    margin-top: 0;
 }
 
 .home-photo {
     width: 200px;
     height: auto;
+    flex: 0 0 auto;
     border-radius: 10px;
     object-fit: cover;
-    flex: 0 0 auto;
     border: 1px solid var(--border);
-}
-
-.home-content {
-    margin-bottom: 2.5rem;
 }
 
 .home-projects h2 {
@@ -78,34 +151,47 @@
     font-size: 0.92rem;
 }
 
-/* Header: single GitHub icon on the right. */
-.header-nav>.logo-switches {
-    margin-left: auto;
+/* Home h1 is provided for structure; the name is rendered in the header. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
-.header-social {
-    display: inline-flex;
-    align-items: center;
-    color: var(--secondary);
-}
+@media (max-width: 480px) {
+    .header-nav {
+        padding-left: 16px;
+        padding-right: 16px;
+        column-gap: 12px;
+    }
 
-.header-social svg {
-    width: 20px;
-    height: 20px;
-}
+    .header-left {
+        gap: 0.75rem;
+    }
 
-.header-social:hover {
-    color: var(--primary);
+    .header-nav .logo a {
+        font-size: 15px;
+    }
+
+    .header-nav .menu {
+        column-gap: 0.75rem;
+    }
+
+    .header-nav .menu a {
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 640px) {
-    .home-hero {
+    .home-body {
         flex-direction: column;
         gap: 1.25rem;
-    }
-
-    .home-title {
-        font-size: 1.9rem;
     }
 
     .home-photo {

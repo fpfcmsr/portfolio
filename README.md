@@ -3,9 +3,10 @@
 Hugo site (PaperMod theme) deployed to GitHub Pages as a **project site**:
 <https://fpfcmsr.github.io/portfolio/>
 
-Single-page personal site: name and LinkedIn at the top, self-image slot beside them,
-About/Background prose, then a Projects list. The header carries a GitHub link in the
-top-right corner and nothing else.
+Single-page personal site in the shape of <https://tylerhillery.com>: a bar with the name
+(small, blue, links home) and a **Projects** tab on the left, GitHub and the theme toggle
+on the right. The body opens with LinkedIn, then About/Background prose beside a
+self-image slot, then a Projects list.
 
 ## Requirements
 
@@ -31,9 +32,9 @@ hugo server -D         # include drafts
 | `config/development/hugo.toml` | Dev-only `baseURL` so links stay on localhost |
 | `content/_index.md` | Home page body — About Me, Background |
 | `content/projects/` | One page per project; `example-project.md` is a draft template |
-| `layouts/home.html` | Home page: hero, prose, project list |
-| `layouts/_partials/header.html` | Header override: GitHub link only, no nav menu |
-| `assets/css/extended/custom.css` | Hero, photo slot, header icon, project list styling |
+| `layouts/home.html` | Home page: LinkedIn line, prose + photo slot, project list |
+| `layouts/_partials/header.html` | Header override: brand + tab left, GitHub right |
+| `assets/css/extended/custom.css` | Bar, brand colour, photo slot, project list styling |
 | `static/` | Favicons (`favicon.ico`, PNGs, `safari-pinned-tab.svg`) |
 | `themes/PaperMod` | Theme, pinned submodule |
 
@@ -106,3 +107,8 @@ Neither license is displayed on the site: the copyright line is hidden
   drift.
 - **Theme toggle**: kept next to the GitHub icon; set `disableThemeToggle = true` to
   leave only the GitHub link in the header.
+- **Bar details**: brand text is 17 px (15 px under 480 px), styled by `--brand` /
+  `--brand-hover` in `custom.css` (blue in light, lighter blue in dark); change those two
+  variables to re-tint. Tabs stay neutral grey and turn blue on hover/active. The home
+  page keeps an `h1` with the name as screen-reader-only text, since the visible name is
+  the bar's brand link.
