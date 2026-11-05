@@ -1,0 +1,76 @@
+# Project site on GitHub Pages: https://<user>.github.io/<repo>/
+# Change baseURL only if you move to a custom domain or an org/user site.
+baseURL = 'https://fpfcmsr.github.io/portfolio/'
+locale = 'en-US'
+defaultContentLanguage = 'en'
+title = 'Francesco Fortunelli'
+
+theme = 'PaperMod'
+
+enableRobotsTXT = true
+enableEmoji = true
+summaryLength = 30
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  env = 'production'
+  description = 'Portfolio and project archive of Francesco Fortunelli.'
+  author = 'Francesco Fortunelli'
+
+  # auto | light | dark
+  defaultTheme = 'auto'
+  disableThemeToggle = false
+
+  ShowReadingTime = true
+  ShowWordCount = false
+  ShowShareButtons = false
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowPostNavLinks = true
+  ShowToc = false
+  ShowRssButtonInSectionTermList = false
+  hideFooter = false
+
+  [params.profileMode]
+    enabled = true
+    title = 'Francesco Fortunelli'
+    subtitle = 'Software engineering portfolio'
+    imageWidth = 150
+    imageHeight = 150
+    [[params.profileMode.buttons]]
+      name = 'Projects'
+      url = '/projects/'
+    [[params.profileMode.buttons]]
+      name = 'About'
+      url = '/about/'
+
+  # [params.assets]
+  #   favicon = 'favicon.ico'
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/fpfcmsr'
+
+  [[params.socialIcons]]
+    name = 'email'
+    url = 'mailto:frafortunelli@protonmail.com'
+
+[[menu.main]]
+  identifier = 'projects'
+  name = 'Projects'
+  url = '/projects/'
+  weight = 10
+
+[[menu.main]]
+  identifier = 'about'
+  name = 'About'
+  url = '/about/'
+  weight = 20
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = false
+  [markup.highlight]
+    noClasses = false

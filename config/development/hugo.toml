@@ -1,0 +1,3 @@
+# Used by 'hugo server' (HUGO_ENVIRONMENT=development).
+# Keeps menu/absolute links on localhost instead of the production host.
+baseURL = 'http://localhost:1313/portfolio/'
