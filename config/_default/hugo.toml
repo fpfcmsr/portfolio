@@ -23,11 +23,6 @@ summaryLength = 30
   defaultTheme = 'auto'
   disableThemeToggle = false
 
-  # Consumed by the site's own header and home layouts.
-  [params.links]
-    github = 'https://github.com/fpfcmsr'
-    linkedin = 'https://www.linkedin.com/in/fpfcmsr/'
-
   # Project pages only; the home page is custom-built.
   ShowReadingTime = true
   ShowWordCount = false
@@ -36,6 +31,12 @@ summaryLength = 30
   ShowCodeCopyButtons = true
   ShowPostNavLinks = true
   ShowToc = false
+
+# Tables last: in TOML every key after a table header belongs to that table.
+# Consumed by the site's own header and home layouts.
+[params.links]
+  github = 'https://github.com/fpfcmsr'
+  linkedin = 'https://www.linkedin.com/in/fpfcmsr/'
 
 [[menu.main]]
   identifier = 'projects'

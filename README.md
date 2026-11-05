@@ -34,6 +34,7 @@ hugo server -D         # include drafts
 | `content/projects/` | One page per project; `example-project.md` is a draft template |
 | `layouts/home.html` | Home page: LinkedIn line, prose + photo slot, project list |
 | `layouts/_partials/header.html` | Header override: brand + tab left, GitHub right |
+| `layouts/_partials/footer.html` | Footer override: copyright only, theme credit removed |
 | `assets/css/extended/custom.css` | Bar, brand colour, photo slot, project list styling |
 | `static/` | Favicons (`favicon.ico`, PNGs, `safari-pinned-tab.svg`) |
 | `themes/PaperMod` | Theme, pinned submodule |
@@ -95,8 +96,8 @@ so a custom domain or repo rename needs no config change.
 | Theme (`themes/PaperMod` submodule) | MIT, see `themes/PaperMod/LICENSE` |
 
 No license text is displayed on the site: the footer carries only the copyright
-(`© 2026 Francesco Fortunelli`) and the theme's upstream credit, and the license files
-sit at the repo root, outside `static/` and `content/`, so Hugo never publishes them.
+(`© 2026 Francesco Fortunelli`), and the license files sit at the repo root, outside
+`static/` and `content/`, so Hugo never publishes them.
 
 ## Notes
 
@@ -107,6 +108,14 @@ sit at the repo root, outside `static/` and `content/`, so Hugo never publishes 
   drift.
 - **Theme toggle**: kept next to the GitHub icon; set `disableThemeToggle = true` to
   leave only the GitHub link in the header.
+- **Footer credit**: PaperMod's "Powered by Hugo & PaperMod" line is removed in
+  `layouts/_partials/footer.html` (upstream asks you to keep it — restore that `<span>`
+  if you'd rather credit it). Everything else in the partial, including the theme
+  toggle, copy-button and scroll-to-top scripts, is upstream code; re-check it on theme
+  updates along with the header override.
+- **TOML table order**: in `config/_default/hugo.toml` every key after a `[params.x]`
+  header belongs to that table. Keep scalar `params` first and `[params.links]` last, or
+  flags like `ShowCodeCopyButtons` silently end up under `params.links` and stop applying.
 - **Bar details**: the bar is filled with `--bar-bg` (a deeper blue in dark mode), text is
   `--bar-fg` / `--bar-fg-dim`; all three live in `custom.css`. The brand is 17 px (15 px
   under 480 px); tabs and icons sit at 85% white and go full white on hover/active.
