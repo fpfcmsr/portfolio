@@ -1,7 +1,7 @@
 # Portfolio
 
-Hugo site (PaperMod theme) deployed to GitHub Pages as a **project site**:
-<https://fpfcmsr.github.io/portfolio/>
+Hugo site (PaperMod theme) deployed to GitHub Pages:
+<https://www.ffortunelli.com/> (default URL <https://fpfcmsr.github.io/portfolio/> redirects).
 
 Single-page personal site in the shape of <https://tylerhillery.com>: an ocean-blue bar
 with the name (small, links home) and a **Projects** tab on the left, GitHub and the theme
@@ -20,7 +20,7 @@ git clone --recurse-submodules https://github.com/fpfcmsr/portfolio.git
 # already cloned without submodules?
 git submodule update --init --recursive
 
-hugo server            # http://localhost:1313/portfolio/ — drafts included
+hugo server            # http://localhost:1313/ — drafts included
 ```
 
 ## Layout
@@ -28,7 +28,7 @@ hugo server            # http://localhost:1313/portfolio/ — drafts included
 | Path | Purpose |
 |---|---|
 | `config/_default/hugo.toml` | Site config: baseURL, title, `params.links`, params |
-| `config/development/hugo.toml` | Dev-only `baseURL` so links stay on localhost |
+| `config/development/hugo.toml` | Dev `baseURL` (`localhost:1313`, root) and `buildDrafts` |
 | `content/_index.md` | Home page body — About Me, Background |
 | `archetypes/projects.md` | Skeleton for new project pages |
 | `content/projects/` | One page bundle per project; `example-project/` is a draft sample |
@@ -106,7 +106,16 @@ GitHub Actions**. No `gh-pages` branch is used.
 
 The workflow installs Hugo 0.169.0 (keep `HUGO_VERSION` in sync with local), checks out
 the theme submodule recursively, and passes `--baseURL` from `actions/configure-pages`,
-so a custom domain or repo rename needs no config change.
+so the deployed site follows the Pages custom domain without a config change.
+
+Custom domain (`www.ffortunelli.com`, set in Settings → Pages):
+
+- `www` is a `CNAME` to `fpfcmsr.github.io` in Cloudflare, **DNS only** — proxying
+  (orange cloud) hides the origin and blocks GitHub from issuing the TLS certificate.
+- The apex `ffortunelli.com` uses `A` records to `185.199.108.153`, `185.199.109.153`,
+  `185.199.110.153`, `185.199.111.153`, also DNS only; GitHub then redirects the apex to
+  `www`. Without them Pages reports "ffortunelli.com is improperly configured".
+- No `CNAME` file is committed: with an Actions workflow GitHub ignores it.
 
 ## License
 

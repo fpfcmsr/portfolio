@@ -1,6 +1,5 @@
-# Project site on GitHub Pages: https://<user>.github.io/<repo>/
-# Change baseURL only if you move to a custom domain or an org/user site.
-baseURL = 'https://fpfcmsr.github.io/portfolio/'
+# GitHub Pages serves this project site on its custom domain, at the root.
+baseURL = 'https://www.ffortunelli.com/'
 locale = 'en-US'
 defaultContentLanguage = 'en'
 title = 'Francesco Fortunelli'
