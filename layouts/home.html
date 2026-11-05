@@ -1,0 +1,46 @@
+{{- define "main" }}
+<article class="home">
+    <header class="home-hero">
+        <div class="home-hero-text">
+            <h1 class="home-title">{{ .Title | default site.Title }}</h1>
+            {{- with site.Params.links.linkedin }}
+            <a class="home-link" href="{{ . }}" target="_blank" rel="noopener me">
+                {{ partial "svg.html" (dict "name" "linkedin") }}<span>LinkedIn</span>
+            </a>
+            {{- end }}
+        </div>
+
+        {{- $photo := or (resources.Get "self.jpg") (resources.Get "self.jpeg") (resources.Get "self.png") (resources.Get "self.webp") }}
+        {{- with $photo }}
+        {{- if in (slice "jpeg" "png" "webp") .MediaType.SubType }}
+        {{- $photo = .Fill "400x500 Center" }}
+        {{- end }}
+        <img class="home-photo" src="{{ $photo.RelPermalink }}" width="{{ $photo.Width }}" height="{{ $photo.Height }}"
+            alt="{{ site.Title }}" loading="eager" decoding="async">
+        {{- end }}
+    </header>
+
+    {{- with .Content }}
+    <div class="md-content home-content">
+        {{ . }}
+    </div>
+    {{- end }}
+
+    {{- $projects := where site.RegularPages "Section" "projects" }}
+    {{- with $projects }}
+    <section class="home-projects">
+        <h2><a href="{{ "/projects/" | relLangURL }}">Projects</a></h2>
+        <ul>
+            {{- range . }}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{- with .Summary }}
+                <span class="home-project-summary">{{ . | plainify | htmlUnescape }}</span>
+                {{- end }}
+            </li>
+            {{- end }}
+        </ul>
+    </section>
+    {{- end }}
+</article>
+{{- end }}

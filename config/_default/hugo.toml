@@ -16,13 +16,19 @@ summaryLength = 30
 
 [params]
   env = 'production'
-  description = 'Portfolio and project archive of Francesco Fortunelli.'
+  description = 'Francesco Fortunelli — software engineering portfolio.'
   author = 'Francesco Fortunelli'
 
   # auto | light | dark
   defaultTheme = 'auto'
   disableThemeToggle = false
 
+  # Consumed by the site's own header and home layouts.
+  [params.links]
+    github = 'https://github.com/fpfcmsr'
+    linkedin = 'https://www.linkedin.com/in/fpfcmsr/'
+
+  # Project pages only; the home page is custom-built.
   ShowReadingTime = true
   ShowWordCount = false
   ShowShareButtons = false
@@ -30,44 +36,10 @@ summaryLength = 30
   ShowCodeCopyButtons = true
   ShowPostNavLinks = true
   ShowToc = false
-  ShowRssButtonInSectionTermList = false
-  hideFooter = false
 
-  [params.profileMode]
-    enabled = true
-    title = 'Francesco Fortunelli'
-    subtitle = 'Software engineering portfolio'
-    imageWidth = 150
-    imageHeight = 150
-    [[params.profileMode.buttons]]
-      name = 'Projects'
-      url = '/projects/'
-    [[params.profileMode.buttons]]
-      name = 'About'
-      url = '/about/'
-
-  # [params.assets]
-  #   favicon = 'favicon.ico'
-
-  [[params.socialIcons]]
-    name = 'github'
-    url = 'https://github.com/fpfcmsr'
-
-  [[params.socialIcons]]
-    name = 'email'
-    url = 'mailto:frafortunelli@protonmail.com'
-
-[[menu.main]]
-  identifier = 'projects'
-  name = 'Projects'
-  url = '/projects/'
-  weight = 10
-
-[[menu.main]]
-  identifier = 'about'
-  name = 'About'
-  url = '/about/'
-  weight = 20
+  # Copyright/license line hidden; only the theme's upstream credit remains.
+  [params.footer]
+    hideCopyright = true
 
 [markup]
   [markup.goldmark.renderer]
