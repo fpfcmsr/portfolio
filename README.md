@@ -94,7 +94,9 @@ Body sections are `Overview`, `Problem`, `Approach`, `Stack`, `Results`, `Links`
 hugo --gc --minify
 ```
 
-Output lands in `public/` (git-ignored — CI builds it).
+Output lands in `public/` (git-ignored — CI builds it). If you have been running
+`hugo server -D`, draft output stays in `public/`; add `--cleanDestinationDir` when
+building locally so published output matches CI.
 
 ## Deploy
 
