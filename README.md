@@ -31,7 +31,8 @@ hugo server -D         # include drafts
 | `config/_default/hugo.toml` | Site config: baseURL, title, `params.links`, params |
 | `config/development/hugo.toml` | Dev-only `baseURL` so links stay on localhost |
 | `content/_index.md` | Home page body — About Me, Background |
-| `content/projects/` | One page per project; `example-project.md` is a draft template |
+| `archetypes/projects.md` | Skeleton for new project pages |
+| `content/projects/` | One page bundle per project; `example-project/` is a draft sample |
 | `layouts/home.html` | Home page: large name, LinkedIn line, prose + photo slot, project list |
 | `layouts/_partials/header.html` | Header override: brand + tab left, GitHub right |
 | `layouts/_partials/footer.html` | Footer override: copyright only, theme credit removed |
@@ -59,14 +60,33 @@ placeholder is generated.
 
 ## Projects
 
+Projects are page bundles, so each one keeps its images next to its text:
+
 ```sh
-hugo new content projects/my-project.md   # created as a draft
+hugo new content projects/my-project/index.md   # creates the bundle, as a draft
+hugo server -D                                  # view drafts while filling them in
 ```
 
-Set `draft: false` to publish. Published projects appear on the home page under
-**Projects** (title + `summary`); the section is hidden while none are published.
-Each project page keeps the theme's single-page layout with the header name as the
-link back home.
+The file lands with `archetypes/projects.md` front matter and body:
+
+```toml
+title   = 'My Project'    # derived from the directory name
+date    = '<now>'
+draft   = true            # flip to false to publish
+summary = ''              # one line, shown in the home list
+tags    = []
+```
+
+Body sections are `Overview`, `Problem`, `Approach`, `Stack`, `Results`, `Links`,
+`Notes` — prompts, not fixed markup; change them per project.
+
+- **Images**: drop `cover.jpg` in the bundle and uncomment the `[cover]` block
+  (`image`, `alt`). PaperMod resizes it for the list card and the page header.
+- **Ordering**: newest `date` first, on `/projects/` and on the home list.
+- **Visibility**: published pages appear on the home page under **Projects** (title +
+  `summary`); the section stays hidden while nothing is published.
+- **Plain file**: `hugo new content projects/my-project.md` also works if a project
+  needs no images.
 
 ## Build
 

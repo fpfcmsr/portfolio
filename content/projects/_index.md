@@ -1,11 +1,5 @@
 ---
 title: "Projects"
-description: "Selected work, experiments, and research."
+description: "Case studies on what I built, why, and how."
 date: 2026-11-04
 ---
-
-Each entry below is a full page. Add one with:
-
-```sh
-hugo new content projects/my-project.md
-```
