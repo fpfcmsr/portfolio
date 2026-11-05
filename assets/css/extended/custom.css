@@ -1,20 +1,27 @@
-/* Blue brand: light and dark variants. */
+/* Blue bar; accent blue kept for content hover states. */
 :root {
+    --bar-bg: rgb(31, 95, 208);
+    --bar-fg: rgb(255, 255, 255);
+    --bar-fg-dim: rgba(255, 255, 255, 0.85);
     --brand: rgb(31, 95, 208);
-    --brand-hover: rgb(20, 72, 165);
 }
 
 :root[data-theme="dark"] {
+    --bar-bg: rgb(28, 74, 170);
     --brand: rgb(138, 180, 248);
-    --brand-hover: rgb(174, 203, 250);
 }
 
 /* No-JS fallback for auto theme. */
 @media (prefers-color-scheme: dark) {
     :root[data-theme="auto"] {
+        --bar-bg: rgb(28, 74, 170);
         --brand: rgb(138, 180, 248);
-        --brand-hover: rgb(174, 203, 250);
     }
+}
+
+/* Blue bar, full width; contents stay on the theme's nav grid. */
+.header {
+    background: var(--bar-bg);
 }
 
 /* Header: brand and tab on the left, GitHub on the right. */
@@ -33,11 +40,12 @@
     font-size: 17px;
     font-weight: 600;
     letter-spacing: 0;
-    color: var(--brand);
+    color: var(--bar-fg);
 }
 
 .header-nav .logo a:hover {
-    color: var(--brand-hover);
+    color: var(--bar-fg);
+    opacity: 0.85;
 }
 
 .header-nav .menu {
@@ -46,12 +54,12 @@
 
 .header-nav .menu a {
     font-size: 14px;
-    color: var(--secondary);
+    color: var(--bar-fg-dim);
 }
 
 .header-nav .menu a:hover,
 .header-nav .menu .active {
-    color: var(--brand);
+    color: var(--bar-fg);
 }
 
 .header-nav .menu .active {
@@ -66,7 +74,7 @@
 .header-social {
     display: inline-flex;
     align-items: center;
-    color: var(--secondary);
+    color: var(--bar-fg-dim);
 }
 
 .header-social svg {
@@ -74,8 +82,13 @@
     height: 20px;
 }
 
-.header-social:hover {
-    color: var(--brand);
+.header-social:hover,
+.header-nav .theme-toggle:hover {
+    color: var(--bar-fg);
+}
+
+.header-nav .theme-toggle {
+    color: var(--bar-fg-dim);
 }
 
 /* Home: LinkedIn line, then prose with the self-image slot beside it. */

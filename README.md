@@ -3,8 +3,8 @@
 Hugo site (PaperMod theme) deployed to GitHub Pages as a **project site**:
 <https://fpfcmsr.github.io/portfolio/>
 
-Single-page personal site in the shape of <https://tylerhillery.com>: a bar with the name
-(small, blue, links home) and a **Projects** tab on the left, GitHub and the theme toggle
+Single-page personal site in the shape of <https://tylerhillery.com>: a blue bar with the
+name (small, links home) and a **Projects** tab on the left, GitHub and the theme toggle
 on the right. The body opens with LinkedIn, then About/Background prose beside a
 self-image slot, then a Projects list.
 
@@ -107,8 +107,9 @@ Neither license is displayed on the site: the copyright line is hidden
   drift.
 - **Theme toggle**: kept next to the GitHub icon; set `disableThemeToggle = true` to
   leave only the GitHub link in the header.
-- **Bar details**: brand text is 17 px (15 px under 480 px), styled by `--brand` /
-  `--brand-hover` in `custom.css` (blue in light, lighter blue in dark); change those two
-  variables to re-tint. Tabs stay neutral grey and turn blue on hover/active. The home
-  page keeps an `h1` with the name as screen-reader-only text, since the visible name is
-  the bar's brand link.
+- **Bar details**: the bar is filled with `--bar-bg` (a deeper blue in dark mode), text is
+  `--bar-fg` / `--bar-fg-dim`; all three live in `custom.css`. The brand is 17 px (15 px
+  under 480 px); tabs and icons sit at 85% white and go full white on hover/active.
+  `--brand` still tints content links (`LinkedIn` hover). The home page keeps an `h1`
+  with the name as screen-reader-only text, since the visible name is the bar's brand
+  link.
