@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Monthly rebuild. The footer's copyright year is baked in at build time,
+    # so a January run rolls it over; it also re-runs the moving action tags.
+    - cron: '17 4 1 * *'
 
 permissions:
   contents: read
@@ -22,6 +26,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      # Pinned on purpose. Hugo ships deprecations (not just fixes) in minor
+      # releases, and the layouts here are validated against this version.
+      # To bump: change this line, run `hugo --panicOnWarning` locally, fix any
+      # warnings, then push. Never use `latest` for deploys.
       HUGO_VERSION: 0.169.0
     steps:
       - name: Install Hugo CLI
@@ -44,7 +52,7 @@ jobs:
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
-        run: hugo --minify --gc --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: hugo --minify --gc --panicOnWarning --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

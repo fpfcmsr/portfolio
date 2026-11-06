@@ -1,0 +1,14 @@
+version: 2
+
+updates:
+  # Action major tags (checkout@v4, actions/deploy-pages@v4, ...) move; let
+  # Dependabot surface bumps as PRs instead of picking them up silently.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: ci
+    groups:
+      actions:
+        patterns: ["*"]

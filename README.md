@@ -117,6 +117,26 @@ Custom domain (`www.ffortunelli.com`, set in Settings → Pages):
   `www`. Without them Pages reports "ffortunelli.com is improperly configured".
 - No `CNAME` file is committed: with an Actions workflow GitHub ignores it.
 
+### Upgrades
+
+- **Hugo is pinned** — `HUGO_VERSION` in the workflow, matching local 0.169.0. Hugo
+  ships deprecations in *minor* releases (0.158 moved `languageCode` → `locale`, which
+  this repo hit), so `latest` in CI means an unrelated content edit can break the
+  deploy. Bump deliberately: change `HUGO_VERSION`, run `hugo --panicOnWarning`
+  locally, fix what it reports, commit both together.
+- **`--panicOnWarning` runs in CI** as well, so a deprecation fails the build instead of
+  scrolling past in the log (verified: it exits non-zero).
+- **Schedule** — the workflow also runs monthly (`17 4 1 * *` UTC) and on
+  `workflow_dispatch`. The footer's copyright year is baked in at build time, so the
+  January run rolls it over, and each run re-exercises the moving `actions/*@vN` tags.
+  Caveat: GitHub disables scheduled workflows in public repos after 60 days without a
+  push, so it keeps running only while the repo stays active.
+- **Actions versions** — `.github/dependabot.yml` opens one grouped monthly PR for
+  `github-actions` bumps; review before merging, since a major bump can change inputs.
+- **Theme** — `themes/PaperMod` is a pinned submodule; update with
+  `git submodule update --remote themes/PaperMod`, then re-check the two overrides in
+  `layouts/_partials/`.
+
 ## License
 
 | Scope | License |
