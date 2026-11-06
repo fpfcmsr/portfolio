@@ -35,7 +35,7 @@ summaryLength = 30
 # Consumed by the site's own header and home layouts.
 [params.links]
   github = 'https://github.com/fpfcmsr'
-  linkedin = 'https://www.linkedin.com/in/fpfcmsr/'
+  linkedin = 'https://www.linkedin.com/in/ffortunelli/'
 
 [[menu.main]]
   identifier = 'projects'

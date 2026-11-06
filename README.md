@@ -44,7 +44,7 @@ Links live in config, not templates:
 ```toml
 [params.links]
   github = 'https://github.com/fpfcmsr'
-  linkedin = 'https://www.linkedin.com/in/fpfcmsr/'
+  linkedin = 'https://www.linkedin.com/in/ffortunelli/'
 ```
 
 The LinkedIn value above mirrors the GitHub handle and has **not** been verified against
