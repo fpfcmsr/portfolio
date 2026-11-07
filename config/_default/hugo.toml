@@ -20,7 +20,7 @@ summaryLength = 30
 
   # auto | light | dark
   defaultTheme = 'auto'
-  disableThemeToggle = false
+  disableThemeToggle = true
 
   # Project pages only; the home page is custom-built.
   ShowReadingTime = true

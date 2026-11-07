@@ -3,11 +3,6 @@
 Hugo site (PaperMod theme) deployed to GitHub Pages:
 <https://www.ffortunelli.com/> (default URL <https://fpfcmsr.github.io/portfolio/> redirects).
 
-Single-page personal site in the shape of <https://tylerhillery.com>: an ocean-blue bar
-with the name (small, links home) and a **Projects** tab on the left, GitHub and the theme
-toggle on the right. The body repeats the name at 2.5 rem in black, then LinkedIn, then
-About/Background prose beside a self-image slot, then a Projects list.
-
 ## Requirements
 
 - Hugo extended ≥ 0.169 (`hugo version`)
@@ -46,9 +41,6 @@ Links live in config, not templates:
   github = 'https://github.com/fpfcmsr'
   linkedin = 'https://www.linkedin.com/in/ffortunelli/'
 ```
-
-The LinkedIn value above mirrors the GitHub handle and has **not** been verified against
-a real profile — correct it before publishing.
 
 ## Self image
 
@@ -144,10 +136,6 @@ Custom domain (`www.ffortunelli.com`, set in Settings → Pages):
 | Code: `layouts/`, `assets/`, `config/`, workflow | [MPL-2.0](LICENSE) |
 | Content: `content/`, images, site text | [CC BY 4.0](LICENSE-CONTENT) |
 | Theme (`themes/PaperMod` submodule) | MIT, see `themes/PaperMod/LICENSE` |
-
-No license text is displayed on the site: the footer carries only the copyright
-(`© 2026 Francesco Fortunelli`), and the license files sit at the repo root, outside
-`static/` and `content/`, so Hugo never publishes them.
 
 ## Notes
 
