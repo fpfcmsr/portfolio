@@ -1,18 +1,18 @@
 ---
-title: "Example Project"
+title: "2D Dynamic CFD Analysis of Flow-Driven Propeller Design"
 date: 2026-11-04
 draft: false
-summary: "One sentence on what it does and the result."
+summary: "A 2D transient dynamic-mesh CFD study comparing half-circle and straight-leg propeller geometries, showing a curved three-vane design roughly doubled generated power."
 tags: ["example"]
 ---
 
 ## Overview
 
-One paragraph: what it is, who it is for, and what changed as a result.
+This project uses ANSYS Fluent to simulate the transient, rotating flow around alternative propeller vane designs in 2D. It gives designers a way to compare geometry options for flow-energy capture without building physical prototypes. A mesh convergence study (small, medium, large) selected a medium grid as the accuracy-to-speed trade-off, and the results identified curved vanes as far more efficient than straight legs.
 
 ## Problem
 
-What was missing or broken, and why it mattered.
+There was no quantitative basis for choosing a propeller geometry, and intuition was misleading — a naive estimate assumed three vanes would add ~50% power over two, when the simulation showed roughly a doubling, alongside a surprisingly inefficient straight-leg design. Without a flow model, these non-linear effects and efficiency trade-offs would only surface after prototyping.
 
 ## Approach
 
@@ -23,10 +23,21 @@ As can be seen by the comparisons, the large (.12m outer, .03m inner) mesh is a 
 **Streamlines and Property Contours**
 
 ![Streamlines](streamlines.png)
+{{< rawhtml >}}
+<div style="text-align:center;font-size:0.85em"><i>Velocity Streamlines</i></div>
+{{< /rawhtml >}}
 
 ![Velocity Contour](velocity_contours.png)
+{{< rawhtml >}}
+<div style="text-align:center;font-size:0.85em"><i>Velocity Contours</i></div>
+{{< /rawhtml >}}
 
 ![Pressure Contour](pressure_contours.png)
+{{< rawhtml >}}
+
+<div style="text-align:center;font-size:0.85em"><i>Pressure Contours</i></div>
+
+{{< /rawhtml >}}
 
 {{< rawhtml >}}
 
