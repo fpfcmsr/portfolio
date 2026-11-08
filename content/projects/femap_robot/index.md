@@ -6,13 +6,9 @@ summary: "Stress Analysis of a Humanoid Robot System in FEMAP"
 tags: ["FEMAP", "Simulation"]
 ---
 
-## Overview
-
-One paragraph: what it is, who it is for, and what changed as a result.
-
 ## Problem
 
-What was missing or broken, and why it mattered.
+This project models a humanoid robot in FEMAP to evaluate structural stress and load transmission across its joint subsystems. Using solid, plate, and spring/damper (CBUSH) elements, it maps internal loads at the shoulder, wrist, torso, knee, and ankle joints to locate stress concentrations and confirm the aluminum frame can tolerate operating loads.
 
 ## Approach
 
@@ -42,6 +38,7 @@ The design and the one or two decisions that shaped it. Note what you rejected.
 In the arm subsystem, a revolute joint is used to represent the shoulder (1) and the joint between the phalanges (3). The wrist was modeled using a solid part with two half spheres that have a spherical joint (2) to simulate the rotation of the wrist.
 
 ![Torso Joints in FEMAP](torso_subsystem.png)
+The torso subsystem links the arm and leg assemblies and carries their combined loads between them. Revolute joints at the shoulder mount the arms, while revolute and prismatic connections pass the torso's motion down to the legs, making the torso the primary load path where von Mises stresses concentrate.
 
 ![Leg Joints in FEMAP](leg_subsystem.png)
 
