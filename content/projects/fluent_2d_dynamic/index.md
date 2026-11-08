@@ -1,8 +1,8 @@
 ---
-title: "2D Dynamic CFD Analysis of Flow-Driven Propeller Design"
+title: "Flow-Driven Propeller Design"
 date: 2026-11-04
 draft: false
-summary: "A 2D transient dynamic-mesh CFD study comparing half-circle and straight-leg propeller geometries, showing a curved three-vane design roughly doubled generated power."
+summary: "2D transient dynamic-mesh CFD study comparing propeller geometries"
 tags: ["example"]
 ---
 
