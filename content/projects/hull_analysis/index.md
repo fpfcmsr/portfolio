@@ -37,6 +37,6 @@ The mesh was then refined around the hull to ensure simulation accuracy.
 
 ## Results
 
-Hull drag force (N) increase exponentially with an equation of best fit of $e^{.4484x}$
+Hull drag force (N) increase exponentially with an equation of best fit of $239 * 1.106^{x}$
 
 ![Hull Drag Force Results](results.png)
