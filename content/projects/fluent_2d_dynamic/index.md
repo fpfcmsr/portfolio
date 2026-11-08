@@ -1,7 +1,7 @@
 ---
 title: "Example Project"
 date: 2026-11-04
-draft: true
+draft: false
 summary: "One sentence on what it does and the result."
 tags: ["example"]
 ---

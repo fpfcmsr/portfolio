@@ -39,21 +39,20 @@ The design and the one or two decisions that shaped it. Note what you rejected.
 
 ![Arm Joints in FEMAP](arm_subsystem.png)
 
+In the arm subsystem, a revolute joint is used to represent the shoulder (1) and the joint between the phalanges (3). The wrist was modeled using a solid part with two half spheres that have a spherical joint (2) to simulate the rotation of the wrist.
+
 ![Torso Joints in FEMAP](torso_subsystem.png)
 
 ![Leg Joints in FEMAP](leg_subsystem.png)
 
+The leg subsystem consists of a combination of revolute joints to capture the rotation between the knee lower leg and ankle, consisting of 2 revolute joints, 2 revolute joints to capture rotation in the knee area, and another 4 revolute joints capture the motion being transferred from the torso to the quad. At the quad, one prismatic joint is used to take on the translational motion from the torso, then another one at the knee, and finally, prismatic joints to funnel the translational motion to our support. 
 
 ## Results
 
-Measurable outcome — latency, accuracy, users, hours saved — plus a link to the
-repository or demo.
+Internal loads transmitted to each joint
 
-## Links
+![Arm Joints analysis in FEMAP](arm_analysis_1.png)
 
-- Repository:
-- Demo:
+![Torso Joints analysis in FEMAP](torso_von_mises.png)
 
-## Notes
-
-What you would do differently next time.
+![Leg Joints analysis in FEMAP](leg_von_mises.png)
