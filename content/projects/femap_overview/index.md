@@ -2,7 +2,7 @@
 title: "FEMAP Labs"
 date: 2026-11-04
 draft: false
-summary: "A portfolio of FEMAP/Nastran finite-element labs from the FE course, spanning 1D to 3D elements, static and dynamic analyses, and joint modeling."
+summary: "A portfolio of FEMAP/Nastran finite-element labs, spanning 1D to 3D elements, static and dynamic analyses, and joint modeling."
 tags: ["FEMAP", "Nastran", "Finite Elements"]
 ---
 
