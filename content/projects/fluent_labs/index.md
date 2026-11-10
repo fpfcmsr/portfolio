@@ -2,7 +2,7 @@
 title: "ANSYS Fluent Labs"
 date: 2026-11-09
 draft: false
-summary: "Portfolio of ANSYS Fluent CFD, including laminar, turbulent, and compressible flow, and heat transfer"
+summary: "ANSYS Fluent CFD: laminar, turbulent, and compressible flow, heat transfer"
 tags: ["ANSYS Fluent", "CFD", "Heat Transfer", "Turbulence Modeling", "FEA"]
 ---
 
