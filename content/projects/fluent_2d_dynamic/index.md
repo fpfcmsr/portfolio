@@ -3,7 +3,7 @@ title: "Flow-Driven Propeller Design"
 date: 2026-11-04
 draft: false
 summary: "2D transient dynamic-mesh CFD study comparing propeller geometries"
-tags: ["example"]
+tags: ["ANSYS Fluent", "CFD", "Dynamic Mesh"]
 ---
 
 ## Overview
