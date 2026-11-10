@@ -2,7 +2,7 @@
 title: "ANSYS Fluent Labs"
 date: 2026-11-09
 draft: false
-summary: "A portfolio of ANSYS Fluent CFD labs, from laminar boundary layers to conjugate heat transfer, compressible flow, and turbulence modeling — each validated against theory."
+summary: "A portfolio of ANSYS Fluent CFD, from laminar boundary layers to conjugate heat transfer, compressible flow, and turbulence modeling"
 tags: ["ANSYS Fluent", "CFD", "Heat Transfer", "Turbulence Modeling", "Compressible Flow"]
 ---
 
