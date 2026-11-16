@@ -43,11 +43,11 @@ CAD model (top left) alongside the built prototype on water and two frame iterat
 
 A flow simulation showed the current accelerating around the hull, reaching roughly 2 m/s, with the flow channeled through the wheel zone. 
 
-![ANSYS Velocity streamlines](free_surface_velocity.png)
+![Velocity streamlines](free_surface_velocity.png)
 
-Velocity below the surface: 
+Velocity below the surface is analyzed as well:
 
-![ANSYS Velocity below surface](below_surface_velocity.png)
+![Velocity below surface](below_surface_velocity.png)
 
 And additional half planes to get a comprehensive view of the properties along the flow: 
 
