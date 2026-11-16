@@ -41,11 +41,21 @@ CAD model (top left) alongside the built prototype on water and two frame iterat
 
 ## Results
 
-A static structural analysis of the wheel-frame assembly confirmed the design is over-built for the expected loads: peak von Mises stress reached 1.03 MPa against a 45 MPa yield strength for 6061 aluminum, a factor of safety near 44. Stress concentrates at the top wheel mounts — the natural high-load point — so those joints are the place to reinforce on the next iteration.
+A flow simulation showed the current accelerating around the hull, reaching roughly 2 m/s, with the flow channeled through the wheel zone. 
+
+![ANSYS Velocity streamlines](free_surface_velocity.png)
+
+Velocity below the surface: 
+
+![ANSYS Velocity below surface](below_surface_velocity.png)
+
+And additional half planes to get a comprehensive view of the properties along the flow: 
+
+![ANSYS Pressure Half-cut](mid-pressure.png)
+![ANSYS Velocity Half-cut](mid-velocity.png)
+![ANSYS Pressure Concentration](wheel-pressure.png)
+
+
+A static structural analysis of the wheel-frame assembly confirmed the design is over-built for the expected loads: peak von Mises stress reached 1.03 MPa against a 45 MPa yield strength for 6061 aluminum, a factor of safety near 44. 
 
 ![FEA of Frame](fea_max.png)
-
-A flow simulation showed the current accelerating around the hull, reaching roughly 4.5 m/s, with the flow channeled through the wheel zone. This confirms the pontoon geometry directs water toward the paddles rather than around them.
-
-![ANSYS Velocity streamlines](ansys_vel.png)
-
