@@ -1,5 +1,5 @@
 ---
-title: "FEMAP Labs"
+title: "FEMAP Lab Work"
 date: 2026-11-04
 draft: false
 summary: "A portfolio of FEMAP/Nastran FEA, spanning static and dynamic analyses, joint modeling."
